@@ -9,11 +9,9 @@ const refs = {
 refs.startBtn.addEventListener('click', onStartBtnClickChangeBgColor);
 refs.stopBtn.addEventListener('click', onStopBtnClickStopBgColorChanging);
 
-//для CSS-стилей
 refs.body.classList.add('switcher');
 refs.stopBtn.setAttribute('disabled', 'disabled');
 
-//обрабатывает событие "клик" на кнопке startBtn
 function onStartBtnClickChangeBgColor() {
   refs.intervalId = setInterval(() => {
     changeBgColor(refs.body);
@@ -22,19 +20,16 @@ function onStartBtnClickChangeBgColor() {
   setBtnState(refs.stopBtn, 'enabled');
 }
 
-//обрабатывает событие "клик" на кнопке startBtn
 function onStopBtnClickStopBgColorChanging() {
   clearInterval(refs.intervalId);
   setBtnState(refs.startBtn, 'enabled');
   setBtnState(refs.stopBtn, 'disabled');
 }
 
-//изменяет фоновый цвет body
 function changeBgColor(element) {
   element.style.backgroundColor = getRandomHexColor();
 }
 
-//выполняет toggle атрубута disabled у кнопок startBtn и stopBtn
 function setBtnState(element, attribute) {
   const ATTRIBUTE_PROPERTY = 'disabled';
 
@@ -48,7 +43,6 @@ function setBtnState(element, attribute) {
   }
 }
 
-//генерация случайного цвета
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
     .toString(16)

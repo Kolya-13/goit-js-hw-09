@@ -1,10 +1,8 @@
-// библиотка flatpickr
 import flatpickr from 'flatpickr';
 import { flatpickrOptions } from './options';
 import 'flatpickr/dist/flatpickr.min.css';
 const orangeTheme = require('flatpickr/dist/themes/material_blue.css');
 
-// библиотка notify
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { notifyOptions } from './options';
 
